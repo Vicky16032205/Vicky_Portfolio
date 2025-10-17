@@ -57,23 +57,28 @@ header{
 header ul{
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    padding: 15px 15px;
+    width: auto;
+    min-width: 30%;
+    padding: 15px 25px;
     border-radius: 50px;
     background-color: rgba(0, 0, 69, 0.30);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px #727fde65;
+    gap: 10px;
 }
 
 header ul li{
     list-style: none;
+    white-space: nowrap;
 }
 
 header ul a{
     text-decoration: none;
     color: white;
     font-weight: 700;
-    margin: 0 10px;
+    margin: 0 5px;
+    font-size: 16px;
+    white-space: nowrap;
 }
 
 .box-icons{
@@ -785,7 +790,6 @@ footer h1{
 
 
 /* ==================== NOTIFICATION STYLES ==================== */
-/* Add this code to the END of your style.css file */
 
 /* Custom Notification Styles */
 .custom-notification {
@@ -817,6 +821,207 @@ footer h1{
     border: 2px solid #dc2626;
 }
 
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    position: relative;
+}
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #72a1de, #7e42a7, #6600c5);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.experience-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: #080020e6;
+    backdrop-filter: blur(10px);
+    border: 1px solid #72a1de4d;
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(114, 161, 222, 0.3);
+    border-color: #72a1de;
+}
+
+.experience-card:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.experience-card:nth-child(even) {
+    align-self: flex-end;
+}
+
+.experience-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #72a1de, #7e42a7);
+    border: 3px solid #080020;
+    border-radius: 50%;
+    top: 40px;
+    box-shadow: 0 0 15px rgba(114, 161, 222, 0.6);
+    z-index: 2;
+}
+
+.experience-card:nth-child(odd)::after {
+    right: -62px;
+}
+
+.experience-card:nth-child(even)::after {
+    left: -62px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.experience-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #72a1de, #7e42a7);
+    border-radius: 15px;
+    font-size: 30px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(114, 161, 222, 0.4);
+    flex-shrink: 0;
+}
+
+.experience-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: #2200493d;
+    border: 1px solid #72a1de77;
+    border-radius: 20px;
+    color: #72a1de;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.experience-date i {
+    font-size: 18px;
+}
+
+.experience-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 10px 0;
+    background: linear-gradient(to right, #008baa, #7e42a7, #6600c5, #6070fd);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.experience-content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: lightgray;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.experience-content h3 i {
+    color: #72a1de;
+    font-size: 22px;
+}
+
+.experience-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.experience-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: lightgray;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.experience-points li i {
+    color: #10b981;
+    font-size: 18px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.experience-points .highlight {
+    color: #72a1de;
+    font-weight: 700;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.experience-tags .tag {
+    padding: 6px 15px;
+    background-color: #2200493d;
+    border: 1px solid #72a1de77;
+    border-radius: 20px;
+    color: #72a1de;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.experience-tags .tag:hover {
+    background-color: #72a1de;
+    color: black;
+    box-shadow: 0 0 10px #72a1de6f;
+}
+
 /* Loading spinner animation for button */
 @keyframes spin {
     0% { 
@@ -829,26 +1034,6 @@ footer h1{
 
 .bx-spin {
     animation: spin 1s linear infinite;
-}
-
-/* Responsive notification for mobile */
-@media screen and (max-width: 700px) {
-    .custom-notification {
-        top: 70px;
-        right: 10px;
-        left: 10px;
-        max-width: calc(100% - 20px);
-        font-size: 14px;
-        padding: 15px 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .custom-notification {
-        top: 60px;
-        font-size: 13px;
-        padding: 12px 15px;
-    }
 }
 
 
@@ -1006,6 +1191,60 @@ footer h1{
         min-width: 0;
     }
 
+    .experience-section {
+        width: 85%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .experience-timeline {
+        gap: 40px;
+    }
+
+    /* Move timeline to left side */
+    .experience-timeline::before {
+        left: 30px;
+        transform: none;
+    }
+
+    /* All cards aligned to right of timeline */
+    .experience-card {
+        width: calc(100% - 80px);
+        align-self: flex-start !important;
+        margin-left: 70px;
+    }
+
+    .experience-card:nth-child(odd),
+    .experience-card:nth-child(even) {
+        align-self: flex-start !important;
+        margin-left: 70px;
+        margin-right: 0;
+    }
+
+    /* All dots on left side */
+    .experience-card::after {
+        left: -55px !important;
+        right: auto !important;
+    }
+
+    .experience-content h2 {
+        font-size: 23px;
+    }
+
+    .experience-content h3 {
+        font-size: 17px;
+    }
+
+    .experience-points li {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .experience-tags .tag {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+
     footer{
         font-size: 20px;
     }
@@ -1131,6 +1370,111 @@ footer h1{
     .menu-icon{
         display: inline;
     }
+
+    .custom-notification {
+        top: 70px;
+        right: 10px;
+        left: 10px;
+        max-width: calc(100% - 20px);
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+
+    .experience-section {
+        width: 90%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .experience-timeline {
+        gap: 35px;
+    }
+
+    /* Thinner timeline on mobile */
+    .experience-timeline::before {
+        left: 20px;
+        width: 2px;
+    }
+
+    .experience-card {
+        width: calc(100% - 60px);
+        margin-left: 55px;
+        padding: 20px;
+    }
+
+    .experience-card:nth-child(odd),
+    .experience-card:nth-child(even) {
+        margin-left: 55px;
+    }
+
+    /* Smaller dots on mobile */
+    .experience-card::after {
+        width: 14px;
+        height: 14px;
+        left: -42px !important;
+        top: 25px;
+        border-width: 2px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .experience-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .experience-date {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .experience-date i {
+        font-size: 14px;
+    }
+
+    .experience-content h2 {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+
+    .experience-content h3 {
+        font-size: 15px;
+    }
+
+    .experience-content h3 i {
+        font-size: 18px;
+    }
+
+    .experience-points {
+        margin: 15px 0;
+    }
+
+    .experience-points li {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+
+    .experience-points li i {
+        font-size: 16px;
+        margin-top: 2px;
+    }
+
+    .experience-tags {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .experience-tags .tag {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1237,5 +1581,69 @@ footer h1{
         gap: 10px;
     }
 
+    .custom-notification {
+        top: 60px;
+        font-size: 13px;
+        padding: 12px 15px;
+    }
 
+    .experience-section {
+        width: 92%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .experience-timeline {
+        gap: 30px;
+    }
+
+    .experience-timeline::before {
+        left: 15px;
+    }
+
+    .experience-card {
+        width: calc(100% - 50px);
+        margin-left: 45px;
+        padding: 15px;
+    }
+
+    .experience-card:nth-child(odd),
+    .experience-card:nth-child(even) {
+        margin-left: 45px;
+    }
+
+    .experience-card::after {
+        width: 12px;
+        height: 12px;
+        left: -33px !important;
+        top: 20px;
+    }
+
+    .experience-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .experience-content h2 {
+        font-size: 17px;
+    }
+
+    .experience-content h3 {
+        font-size: 14px;
+    }
+
+    .experience-points li {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .experience-points li i {
+        font-size: 14px;
+    }
+
+    .experience-tags .tag {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
 }
